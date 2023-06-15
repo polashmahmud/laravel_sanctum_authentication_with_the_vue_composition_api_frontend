@@ -1,17 +1,11 @@
 <template>
-  <form v-on:submit.prevent="login">
-    <button type="submit">Login</button>
-  </form>
+  <nav>
+    <router-link to="/">Home</router-link>
+    <router-link to="/dashboard">Dashboard</router-link>
+  </nav>
+  <router-view></router-view>
 </template>
 
 <script setup>
-import axios from "axios";
-
-const login = async () => {
-  await axios.get('/sanctum/csrf-cookie');
-  await axios.post('/login', {
-    email: 'polashmahmud@gmail.com',
-    password: 'password'
-  });
-}
+import { RouterView, RouterLink} from "vue-router";
 </script>
