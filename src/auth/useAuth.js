@@ -40,6 +40,7 @@ export default function useAuth() {
     return {
         login,
         getUser,
-        getAuthenticated
+        getAuthenticated,
+        attempt
     }
 }
